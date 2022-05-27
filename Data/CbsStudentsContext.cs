@@ -26,6 +26,8 @@ namespace CbsStudents.Data
 
         public DbSet<Post> Posts { get; set; }
 
+        public DbSet<Event> Events { get; set; }
+
         public DbSet<cbsStudents.Models.Entities.Comment> Comment { get; set; }
 
 

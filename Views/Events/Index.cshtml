@@ -1,0 +1,34 @@
+﻿@model cbsStudents.Models.Entities.EventIndexVm
+
+@{
+    ViewData["Title"] = "Index - Events";
+}
+
+<div class="d-flex justify-content-between">
+    <h4>Events</h4>
+    <a class="btn btn-primary" asp-action="create">New Event</a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 col-md-2">Title</div>
+        <div class="d-none d-md-block col-md-6 ">Description</div>
+        <div class="col-2 col-md-1">Start Date</div>
+        <div class="col-2 col-md-1">Start Time</div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+
+
+@foreach(var e in Model.Events) {
+    <div class="row grid-row">
+        <div class="col-6 col-md-2">@Html.DisplayFor(x => e.Title)</div>
+        <div class="d-none d-md-block col-md-6">@Html.DisplayFor(x => e.Description)</div>
+        <div class="col-2 col-md-1">@Html.DisplayFor(x => e.StartDate)</div>
+        <div class="col-1">@Html.DisplayFor(x => e.StartTime)</div>
+        <div class="col-1"><a class="btn btn-secondary" asp-action="Edit" asp-route-id="@e.Id">Edit</a></div>
+    </div>
+}
+
+

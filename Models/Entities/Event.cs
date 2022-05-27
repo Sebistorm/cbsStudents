@@ -12,16 +12,18 @@ namespace cbsStudents.Models.Entities
         public string Title { get; set; }
 
         [Required]
-        public DateOnly StartDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:d}")]
+        public DateTime StartDate { get; set; }
 
         [Required]
-        public DateOnly EndDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:d}")]
+        public DateTime EndDate { get; set; }
 
         [Required]
-        public TimeOnly StartTime { get; set; }
+        public string StartTime { get; set; }
 
         [Required]
-        public TimeOnly EndTime { get; set; }
+        public string EndTime { get; set; }
 
         [Required]
         [MinLength(10)]

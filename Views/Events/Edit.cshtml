@@ -1,12 +1,12 @@
-@model cbsStudents.Models.Entities.Post
+﻿@model cbsStudents.Models.Entities.Event
 
 @{
-    ViewData["Title"] = "Edit Post";
+    ViewData["Title"] = "Edit Event";
 }
 
 <h1>Edit</h1>
 
-<h4>Post</h4>
+<h4>Event</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -14,7 +14,7 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Id" />
 
-            @await Html.PartialAsync("_CreateEditPost")
+            @await Html.PartialAsync("_CreateEditEvent")
         </form>
     </div>
 </div>
@@ -22,22 +22,6 @@
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
-
-
-@foreach (var comment in Model.Comments)
-{
-    <div class="row">
-    <div class="col-md-4">
-        <div>
-            @comment.User.Email
-        </div>
-        <div>
-            @comment.Text
-        </div>
-    </div>
-</div>
-
-}
 
 
 @section Scripts {

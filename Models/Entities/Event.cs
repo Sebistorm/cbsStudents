@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace cbsStudents.Models.Entities
 
@@ -13,6 +14,7 @@ namespace cbsStudents.Models.Entities
 
         [Required]
         [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayName("Start Date")]
         public DateTime StartDate { get; set; }
 
         [Required]

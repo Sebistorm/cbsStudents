@@ -18,7 +18,6 @@ public class Post
 
     [DataType(DataType.Date)]
     public DateTime Created { get; set; }
-
     public PostStatus Status { get; set; }
 
     public List<Comment> Comments { get; set; }

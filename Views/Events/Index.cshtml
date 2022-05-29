@@ -15,19 +15,22 @@
         <div class="d-none d-md-block col-md-6 ">Description</div>
         <div class="col-2 col-md-1">Start Date</div>
         <div class="col-2 col-md-1">Start Time</div>
-        <div class="col-1"></div>
+        <div class="col-2"></div>
     </div>
 </div>
 
 
 
 @foreach(var e in Model.Events) {
-    <div class="row grid-row">
+    <div class="row grid-row mb-2">
         <div class="col-6 col-md-2">@Html.DisplayFor(x => e.Title)</div>
         <div class="d-none d-md-block col-md-6">@Html.DisplayFor(x => e.Description)</div>
         <div class="col-2 col-md-1">@Html.DisplayFor(x => e.StartDate)</div>
         <div class="col-1">@Html.DisplayFor(x => e.StartTime)</div>
-        <div class="col-1"><a class="btn btn-secondary" asp-action="Edit" asp-route-id="@e.Id">Edit</a></div>
+        <div class="col-2 d-flex justify-content-between">
+            <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@e.Id">Edit</a>
+            <a a class="btn btn-danger" asp-action="Delete" asp-route-id="@e.Id">Delete</a>
+        </div>
     </div>
 }
 

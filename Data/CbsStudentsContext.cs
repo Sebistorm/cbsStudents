@@ -22,6 +22,7 @@ namespace CbsStudents.Data
             this.UsersSeed(builder);
             this.SeedPosts(builder);
             this.SeedComments(builder);
+            this.SeedEvents(builder);
         }
 
         public DbSet<Post> Posts { get; set; }
@@ -73,6 +74,15 @@ namespace CbsStudents.Data
                 new Comment() { CommentId = 2, Text = "Hello again", TimeStamp = DateTime.Now, PostId = 1, UserId = "2" },
                 new Comment() { CommentId = 3, Text = "Hi", TimeStamp = DateTime.Now, PostId = 2, UserId = "1" },
                 new Comment() { CommentId = 4, Text = "Bye", TimeStamp = DateTime.Now, PostId = 3, UserId = "1" }
+            );
+        }
+
+        private void SeedEvents(ModelBuilder builder)
+        {
+            builder.Entity<Event>().HasData(
+                new Event() { Id = 1, Title = "Pokemon Safari", Description = "Welcome to the Pokemon Safari", StartDate = DateTime.Now, StartTime = "15:30", EndDate = DateTime.Now, EndTime = "20:30"},
+                new Event() { Id = 2, Title = "Champions League", Description = "Welcome to the Champions League Finale", StartDate = DateTime.Now, StartTime = "12:30", EndDate = DateTime.Now, EndTime = "18:30"},
+                new Event() { Id = 3, Title = "GoKart", Description = "Welcome to GoKart. Ready Set GO!", StartDate = DateTime.Now, StartTime = "14:30", EndDate = DateTime.Now, EndTime = "19:30" }
             );
         }
     }

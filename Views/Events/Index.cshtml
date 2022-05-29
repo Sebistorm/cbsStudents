@@ -9,6 +9,13 @@
     <a class="btn btn-primary" asp-action="create">New Event</a>
 </div>
 
+<form asp-controller="Events" asp-action="Index" method="get">
+    <p>
+        Title: <input type="text" name="SearchString" value="@Model.SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <div class="container">
     <div class="row">
         <div class="col-6 col-md-2">Title</div>

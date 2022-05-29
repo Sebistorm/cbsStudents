@@ -17,13 +17,21 @@ namespace cbsStudents.Controllers
         }
 
         // Get Index & All Events
-        public IActionResult Index()
+        public IActionResult Index(string SearchString)
         {
+            if (SearchString == null)
+            {
+                SearchString = "";
+            }
+
             var events = from e in _context.Events select e;
+
+            events = events.Where(x => x.Title.Contains(SearchString));
 
             var vm = new EventIndexVm
             {
-                Events = events.ToList()
+                Events = events.ToList(),
+                SearchString = SearchString
             };
 
             return View(vm);

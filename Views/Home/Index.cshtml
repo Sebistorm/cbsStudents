@@ -1,12 +1,59 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "CBS Students";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container-fluid" id="splashImageHomepage">
+    <div class="d-flex justify-content-center align-items-center h-100">
+       <h1 class="display-1">CBS Students</h1> 
+    </div>
+    <div class="overlay-splash"></div>
 </div>
 
-<p>
-    Hello world
-</p>
+<div class="container-fluid homepageSection">
+    <div class="row" style="margin:0px;">
+
+        <div class="col-6" id="posts">
+            <div class="overlay">
+                <a class="d-flex justify-content-center align-items-center h-100" asp-controller="Posts" asp-action="Index">
+                    <h2 class="h1">Posts</h2>
+                </a>
+            </div>
+        </div>
+        
+
+        
+        <div class="col-6" id="events">
+            <div class="overlay">
+                <a class="d-flex justify-content-center align-items-center h-100" asp-area="" asp-controller="Events" asp-action="Index">
+                    <h2 class="h1">Events</h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" style="margin:0px">
+
+        <div class="col-6" id="comments">
+            <div class="overlay">
+                <a class="d-flex justify-content-center align-items-center h-100" asp-controller="Comments" asp-action="Index">
+                    <h2 class="h1">Comments</h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-6" id="coming_soon">
+            <div class="overlay">
+                <div class="d-flex justify-content-center align-items-center h-100">
+                    <h2 class="h1">Coming soon</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+
+
+
+</div>

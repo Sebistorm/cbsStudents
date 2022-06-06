@@ -4,25 +4,27 @@
     ViewData["Title"] = "Edit Event";
 }
 
-<h1>Edit</h1>
+<div class="container">
 
-<h4>Event</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
+    <h1>Edit</h1>
 
-            @await Html.PartialAsync("_CreateEditEvent")
-        </form>
+    <h4>Event</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                @await Html.PartialAsync("_CreateEditEvent")
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 
 @section Scripts {
 @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

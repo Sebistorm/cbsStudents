@@ -1,22 +1,27 @@
 ﻿using cbsStudents.Models.Entities;
 using CbsStudents.Data;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 
 namespace cbsStudents.Controllers
 {
+    [Authorize]
     public class EventsController : Controller
     {
         private CbsStudentsContext _context;
+        private readonly UserManager<IdentityUser> _userManager;
 
-        public EventsController(CbsStudentsContext context)
+        public EventsController(CbsStudentsContext context, UserManager<IdentityUser> userManager)
         {
+            _userManager = userManager;
             this._context = context;
         }
 
         // Get Index & All Events
+        [AllowAnonymous]
         public IActionResult Index(string SearchString)
         {
             if (SearchString == null)

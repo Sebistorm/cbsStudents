@@ -30,6 +30,12 @@ body {
     text-decoration: none;
     padding: 0px !important;
 }
+
+#loginSection {
+    min-width:320px;
+}
+
+
 /* Homepage */
 #splashImageHomepage {
     position: relative;
@@ -109,6 +115,18 @@ body {
     position: relative;
     height: 30vh;
     background-color:#404040;
+}
+
+
+/*Events*/
+.event, .eventHead {
+    background-color: #1B2A38;
+    color: white;
+}
+
+.event:nth-of-type(2n+1) {
+    background-color: white;
+    color: #1B2A38;
 }
 
 

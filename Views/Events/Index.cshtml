@@ -14,27 +14,27 @@
     <form asp-controller="Events" asp-action="Index" method="get">
         <p>
             Title: <input type="text" name="SearchString" value="@Model.SearchString" />
-            <input type="submit" value="Filter" />
+            <input class="btn btn-primary" type="submit" value="Filter" />
         </p>
     </form>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-6 col-md-2">Title</div>
-            <div class="d-none d-md-block col-md-6 ">Description</div>
-            <div class="col-2 col-md-1">Start Date</div>
-            <div class="col-2 col-md-1">Start Time</div>
-            <div class="col-2"></div>
-        </div>
+   
+    <div class="row py-2 eventHead">
+        <div class="col-6 col-md-2">Title</div>
+        <div class="d-none d-md-block col-md-5 ">Description</div>
+        <div class="col-2">Start Date</div>
+        <div class="col-1">Start Time</div>
+        <div class="col-2"></div>
     </div>
+    
 
 
 
     @foreach(var e in Model.Events) {
-        <div class="row grid-row mb-2">
+        <div class="row grid-row mb-2 align-items-center py-2 event">
             <div class="col-6 col-md-2">@Html.DisplayFor(x => e.Title)</div>
-            <div class="d-none d-md-block col-md-6">@Html.DisplayFor(x => e.Description)</div>
-            <div class="col-2 col-md-1">@Html.DisplayFor(x => e.StartDate)</div>
+            <div class="d-none d-md-block col-md-5">@Html.DisplayFor(x => e.Description)</div>
+            <div class="col-2">@Html.DisplayFor(x => e.StartDate)</div>
             <div class="col-1">@Html.DisplayFor(x => e.StartTime)</div>
             <div class="col-2 d-flex">
                 <a class="btn btn-secondary me-2" asp-action="Edit" asp-route-id="@e.Id">Edit</a>

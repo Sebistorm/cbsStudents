@@ -4,19 +4,22 @@
     ViewData["Title"] = "Create Event";
 }
 <div class="container">
-    <h1>Create Event</h1>
+    
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-6" style="margin: 0 auto;">
+            <h1>Create Event</h1>
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                 @await Html.PartialAsync("_CreateEditEvent")
             </form>
+            <div class="mt-3">
+                <a asp-action="Index">Back to List</a>
+            </div>
         </div>
+        
     </div>
-    <div>
-        <a asp-action="Index">Back to List</a>
-    </div>
+    
 </div>
 
 
